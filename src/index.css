@@ -1,8 +1,58 @@
 @import "tailwindcss";
 
-@theme {
-  --color-background: #0f1418;
+:root {
+   /* LIGHT MODE COLORS */
+  
+  /* Backgrounds */
+  --color-background: #EBE6DC;
+  --color-surface: #F8F5F0;
+  --color-surface-light: #F5F0E8;
+  
+  /* Text Colors */
+  --color-text-primary: #2D2620;
+  --color-text-secondary: #3A342C;
+  --color-text-muted: #5A524A;
+  
+  /* Accent Colors - Sage Green (3 shades) */
+  --color-sage-1: #6A7860;
+  --color-sage-2: #7A8970;
+  --color-sage-3: #5F6D52;
+  
+  /* Accent Colors - Warm Gold (3 shades) */
+  --color-gold-1: #B8956A;
+  --color-gold-2: #A68B5B;
+  --color-gold-3: #9D8456;
+  
+  /* Border */
+  --color-border: #D9CFC0;
 
+}
+
+.dark {
+  /* DARK MODE COLORS */
+  
+  /* Backgrounds */
+  --color-background: #1C1A16;
+  --color-surface: #2D2620;
+  --color-surface-light: #26221D;
+
+  /* Text Colors */
+  --color-text-primary: #E8E3D8;
+  --color-text-secondary: #D6D1C6;
+  --color-text-muted: #C4BFB4;
+
+  /* Accent Colors - Sage */
+  --color-sage-1: #8B9A7E;
+  --color-sage-2: #A4B494;
+  --color-sage-3: #92A582;
+
+  /* Accent Colors - Gold */
+  --color-gold-1: #D4A574;
+  --color-gold-2: #C9A961;
+  --color-gold-3: #B89968;
+
+  /* Border */
+  --color-border: #2D2620;
 }
 
 @layer base {
@@ -11,6 +61,8 @@
   }
 
   body{
+    background-color: var(--color-background);
     font-family: "Inter", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
