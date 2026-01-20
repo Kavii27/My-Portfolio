@@ -28,11 +28,14 @@ export const Navbar = () => {
     const toggleDarkMode = () => {
         setDarkMode(prev => !prev);
 
-        {/*document.documentElement.classList.toggle("dark"); */}
+        //document.documentElement.classList.toggle("dark"); 
     } 
 
     const handleCvDownload = () => {
-
+        const link = document.createElement("a");  //create hidden link
+        link.href = "/cv/Kaveesha_Sandeepani_CV.pdf";
+        link.download = "Kaveesha_Sandeepani_CV.pdf";
+        link.click();
     }
 
     return(
@@ -85,6 +88,13 @@ export const Navbar = () => {
                                 {link.label}
                             </a>
                         ))}
+
+                    <button
+                        onClick={handleCvDownload}
+                        className="mt-2 px-5 py-2 rounded-full bg-[var(--color-sage-1)] text-[var(--color-background)] hover:bg-[var(--color-gold-1)] transition-colors"
+                    >
+                        Download CV
+                    </button>
                     </div>
                 </div>
             )}
