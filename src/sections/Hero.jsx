@@ -25,6 +25,7 @@ export const Hero = () => {
                     </div>
                 </div>
                 {/* Right column - profile image */}
+                <img src="" alt="" />
             </div>
             
        </section>
