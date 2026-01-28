@@ -15,7 +15,7 @@ export const Hero = () => {
             <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12">
 
                 {/* Left column */}
-                <div className="max-w-2xl lg:w-1/2">
+                <div className="max-w-2xl lg:w-1/2 pt-6 lg:pt-0">
                     <div>
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm bg-[var(--color-surface)] text-[var(--color-text-secondary)]">✨ Available for opportunities</span>
                     </div>
@@ -69,10 +69,10 @@ export const Hero = () => {
            
                 <div className="relative flex justify-center lg:w-1/2 mt-10 lg:mt-0">
                 {/* Glow background */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-sage-1)] via-[var(--color-gold-1)] to-[var(--color-sage-2)] blur-3xl opacity-50"></div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[var(--color-gold-1)] via-[var(--color-sage-1)] to-[var(--color-gold-2)] blur-3xl opacity-50"></div>
 
                     {/* Image wrapper */}
-                    <div className="relative w-120 h-120 rounded-full overflow-hidden border border-[var(--color-border)]">
+                    <div className="relative w-80 h-80 sm:w-80 sm:h-80 lg:w-120 lg:h-120 rounded-full overflow-hidden border border-[var(--color-border)]">
                         <img
                         src="/profile-photo.jpeg"
                         alt="Kaveesha Sandeepani"
