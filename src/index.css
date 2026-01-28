@@ -26,6 +26,8 @@
   /* Border */
   --color-border: #D9CFC0;
 
+  --color-bw: #000;
+
 }
 
 .dark {
@@ -53,6 +55,8 @@
 
   /* Border */
   --color-border: #2D2620;
+
+  --color-bw: #FFF;
 }
 
 @layer base {
