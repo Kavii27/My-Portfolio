@@ -6,6 +6,7 @@ export const About = () => {
                     <div>
                         <span>About Me</span>
                     </div>
+                    <div></div>
 
                     <h2></h2>
                 </div>
