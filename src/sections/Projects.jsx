@@ -3,6 +3,25 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
+    title: "Aferent – Healthcare Distributed System",
+    description:
+      "A distributed healthcare system built using microservices architecture. Developed Doctor Service and Notification Service with REST APIs and event-driven communication using Kafka. Supports asynchronous SMS/email notifications and scalable deployment with Docker and Kubernetes.",
+    image: "/projects/aferent.png", // add your image
+    tags: [
+      "Java",
+      "Spring Boot",
+      "MongoDB",
+      "JWT",
+      "Kafka",
+      "Docker",
+      "Kubernetes",
+      "Microservices",
+      "REST APIs"
+    ],
+    link: "#",
+    github: "https://github.com/Nadeena-Srioshi/Aferent",
+  },
+  {
     title: "Livora – Smart Residential Management System",
     description:
       "A smart residential management system with a QR-based Parcel Management Module. Security officers can log parcels, notify residents via email and in-app alerts, and ensure secure parcel handover using QR code validation. Includes analytics and monthly PDF reports.",
@@ -19,6 +38,23 @@ const projects = [
     ],
     link: "#",
     github: "https://github.com/VDewMin/Livora",
+  },
+  {
+    title: "CloudVisor – Air Quality Monitoring Platform",
+    description:
+      "A real-time air quality monitoring platform with live AQI search and historical data tracking. Features preference management, AQI history backfilling, and integration with external APIs. Deployed on Render and Vercel for public access.",
+    image: "/projects/cloudvisor.png", 
+    tags: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST APIs",
+      "xWeather API",
+      "Render",
+      "Vercel"
+    ],
+    link: "https://cloud-visor-frontend.vercel.app/",
+    github: "https://github.com/Nadeena-Srioshi/CloudVisor-Backend",
   },
   {
     title: "Personal Portfolio Website",

@@ -117,10 +117,8 @@ export const Skills = () => {
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <div className="mb-11">
-          <span className="block text-[11px] font-medium tracking-[0.22em] uppercase text-[var(--color-gold-1)] mb-3">
-            Skills
-          </span>
+        <div className="mb-12 text-center">
+          <span className="inline-block mb-3 text-2xl font-bold text-[var(--color-text-muted)]">Skills</span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
             Technologies I use to{" "}
             <em className="italic text-[var(--color-sage-1)]">
