@@ -1,112 +1,37 @@
 import { Code, Database, Server, Wrench, GitBranch, Cpu } from "lucide-react";
-import { useEffect, useRef } from "react";
 
 const skills = [
   {
     title: "Backend",
     icon: Server,
-    items: [
-      { name: "Node.js", level: 85 },
-      { name: "Express.js", level: 80 },
-      { name: "Java EE (JSP/Servlets)", level: 70 },
-      { name: "REST APIs", level: 90 },
-    ],
+    items: ["Node.js", "Express.js", "Java EE (JSP/Servlets)", "REST APIs"],
   },
   {
     title: "Frontend",
     icon: Code,
-    items: [
-      { name: "React.js", level: 85 },
-      { name: "JavaScript", level: 88 },
-      { name: "Tailwind CSS", level: 80 },
-      { name: "HTML / CSS", level: 92 },
-      { name: "Bootstrap", level: 75 },
-    ],
+    items: ["React.js", "JavaScript", "Tailwind CSS", "HTML / CSS", "Bootstrap"],
   },
   {
     title: "Databases",
     icon: Database,
-    items: [
-      { name: "MySQL", level: 85 },
-      { name: "MongoDB Atlas", level: 78 },
-      { name: "SQL Server", level: 72 },
-    ],
+    items: ["MySQL", "MongoDB Atlas", "SQL Server"],
   },
   {
     title: "Languages",
     icon: Cpu,
-    items: [
-      { name: "Java", level: 82 },
-      { name: "JavaScript", level: 88 },
-      { name: "Python", level: 75 },
-      { name: "PHP", level: 70 },
-      { name: "Kotlin", level: 60 },
-      { name: "C / C++", level: 65 },
-    ],
+    items: ["Java", "JavaScript", "Python", "PHP", "Kotlin", "C / C++"],
   },
   {
     title: "Version Control",
     icon: GitBranch,
-    items: [
-      { name: "Git", level: 88 },
-      { name: "GitHub", level: 85 },
-      { name: "Apache Tomcat", level: 72 },
-    ],
+    items: ["Git", "GitHub", "Apache Tomcat"],
   },
   {
     title: "Tools",
     icon: Wrench,
-    items: [
-      { name: "VS Code", level: 92 },
-      { name: "Postman", level: 85 },
-      { name: "Figma", level: 80 },
-      { name: "XAMPP / phpMyAdmin", level: 78 },
-      { name: "ClickUp / Agile", level: 75 },
-    ],
+    items: ["VS Code", "Postman", "Figma", "XAMPP / phpMyAdmin", "ClickUp / Agile"],
   },
 ];
-
-const SkillBar = ({ name, level }) => {
-  const barRef = useRef(null);
-
-  useEffect(() => {
-    const bar = barRef.current;
-    if (!bar) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            bar.style.width = `${level}%`;
-          }, 120);
-          observer.unobserve(bar);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(bar);
-    return () => observer.disconnect();
-  }, [level]);
-
-  return (
-    <div className="mb-6 last:mb-0">
-      <p className="text-xs text-[var(--color-text-muted)] mb-1.5">{name}</p>
-      <div className="h-[5px] bg-[var(--color-surface-light)] rounded-full overflow-hidden">
-        <div
-          ref={barRef}
-          style={{
-            width: "0%",
-            transition: "width 1s cubic-bezier(0.4, 0, 0.2, 1)",
-            background:
-              "linear-gradient(90deg, var(--color-sage-1), var(--color-gold-1))",
-          }}
-          className="h-full rounded-full"
-        />
-      </div>
-    </div>
-  );
-};
 
 export const Skills = () => {
   return (
@@ -174,10 +99,14 @@ export const Skills = () => {
                 }}
               />
 
-              {/* Skill bars */}
-              {skill.items.map((item, i) => (
-                <SkillBar key={i} name={item.name} level={item.level} />
-              ))}
+              {/* Skill items */}
+              <div className="flex flex-wrap gap-2">
+                {skill.items.map((item, i) => (
+                  <span key={i} className="px-3 py-1 text-xs rounded-full bg-[var(--color-surface-light)] text-[var(--color-text-secondary)]">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

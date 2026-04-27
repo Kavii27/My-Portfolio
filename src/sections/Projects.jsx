@@ -18,7 +18,7 @@ const projects = [
       "Microservices",
       "REST APIs"
     ],
-    link: "#",
+    live: "#",
     github: "https://github.com/Nadeena-Srioshi/Aferent",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
       "QR Code",
       "Nodemailer"
     ],
-    link: "#",
+    live: "#",
     github: "https://github.com/VDewMin/Livora",
   },
   {
@@ -53,7 +53,7 @@ const projects = [
       "Render",
       "Vercel"
     ],
-    link: "https://cloud-visor-frontend.vercel.app/",
+    live: "https://cloud-visor-frontend.vercel.app/",
     github: "https://github.com/Nadeena-Srioshi/CloudVisor-Backend",
   },
   {
@@ -62,7 +62,7 @@ const projects = [
       "A modern, responsive personal portfolio website to showcase projects, skills, and experience. Designed with a clean UI, smooth navigation, and mobile-first responsiveness.",
     image: "/projects/portfolio.png",
     tags: ["React", "Tailwind CSS"],
-    link: "#",
+    live: "#",
     github: "https://github.com/Kavii27/My-Portfolio",
   },
   {
@@ -71,7 +71,7 @@ const projects = [
       "An interactive movie browsing application with real-time search and genre filtering. Focused on clean UI/UX, responsive layouts, and smooth state management using React component-based architecture.",
     image: "/projects/moviesphere.png",
     tags: ["React", "Tailwind CSS"],
-    link: "#",
+    live: "#",
     github: "https://github.com/Kavii27/MovieSphere",
   },
   {
@@ -88,7 +88,7 @@ const projects = [
       "OOP",
       "Bootstrap"
     ],
-    link: "#",
+    live: "#",
     github: "https://github.com/Sachintha-88/AutoHub",
   },
   {
@@ -97,7 +97,7 @@ const projects = [
       "An Android application for habit tracking, hydration reminders, and mood monitoring. Includes analytics with weekly visual reports and local data persistence using Shared Preferences.",
     image: "/projects/habitly.png",
     tags: ["Kotlin", "Android", "Shared Preferences"],
-    link: "#",
+    live: "#",
     github: "https://github.com/Kavii27/Habitly",
   },
   {
@@ -106,7 +106,7 @@ const projects = [
       "A full-stack online app store featuring user authentication, application browsing, inquiry and feedback management, and app ratings. Includes a complete Inquiry Management CRUD module.",
     image: "/projects/appplus.jpeg",
     tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-    link: "#",
+    live: "#",
     github: "https://github.com/Kavii27/appPlus---Online-App-Store",
   },
 ];
@@ -124,8 +124,12 @@ export const Projects = () => {
                 {/* projects grid */}
                 <div className="grid md:grid-cols-3 gap-8">
                     {projects.map((project, idx) => (
-                        <div key={idx}
-                            className="group rounded-2xl bg-[var(--color-surface)] shadow-lg border border-[var(--color-border)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <a
+                            key={idx}
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group rounded-2xl bg-[var(--color-surface)] shadow-lg border border-[var(--color-border)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col">
                             {/* image */}
                             <div className="relative overflow-hidden aspect-video">
                                 <img 
@@ -134,26 +138,30 @@ export const Projects = () => {
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             </div>
                             {/* content */}
-                            <div className="p-6 space-y-4">
+                            <div className="p-6 space-y-4 flex flex-col flex-grow">
                                 <div className="flex items-start justify-between">
                                     <h3 className="text-lg font-semibold text-[var(--color-bw)] ">{project.title}</h3>
-                                    <ArrowUpRight/>
+                                    <ArrowUpRight className="text-[var(--color-text-muted)] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"/>
                                 </div>
-                                <p className="text-sm text-[var(--color-bw)]">{project.description}</p>
+                                <p className="text-sm text-[var(--color-bw)] flex-grow">{project.description}</p>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag, tagIdx) => (
-                                        <span className="px-3 py-1 text-xs rounded-full bg-[var(--color-surface-light)] text-[var(--color-text-secondary)]">{tag}</span>
+                                        <span key={tagIdx} className="px-3 py-1 text-xs rounded-full bg-[var(--color-surface-light)] text-[var(--color-text-secondary)]">{tag}</span>
                                     ))}
                                 </div>
-                                <div>
-                                    <a 
-                                    href={project.github}
-                                    className="inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors">
+                                <div className="pt-2">
+                                    <div 
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.open(project.github, '_blank', 'noopener,noreferrer');
+                                    }}
+                                    className="inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors cursor-pointer">
                                         <FaGithub className="w-5 h-5"/>
-                                    </a>
+                                        <span>Source Code</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     ))}
 
                 </div>
